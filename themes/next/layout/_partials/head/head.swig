@@ -7,6 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}">
 {%- endif %}
 {%- if theme.favicon.medium %}
+  <link rel="shortcut icon" href="{{ url_for(theme.favicon.medium) }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}">
 {%- endif %}
 {%- if theme.favicon.small %}
