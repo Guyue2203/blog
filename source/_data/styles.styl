@@ -1,0 +1,122 @@
+
+
+//背景图片设置
+body {
+    background-image: url(https://s.guyue.me/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+
+// 优化图片加载
+img {
+  loading: lazy;  // 启用图片懒加载
+}
+
+// 优化字体图标加载
+.fa {
+  font-display: swap;  // 优化字体图标加载
+}
+
+// 文章卡片圆角 - 修改为包含所有文章块
+.post-block, .post-block + .post-block {
+  border-radius: 8px;
+  margin-top: 24px;  // 添加上边距使文章块之间有间隔
+}
+
+// 确保归档页面的文章块也有圆角
+.posts-collapse .post-block {
+  border-radius: 8px;
+}
+
+// 文章列表中的每个文章
+.post-block {
+  margin-bottom: 24px;  // 添加下边距
+  background: #fff;     // 确保背景色
+  padding: 20px;        // 添加内边距
+}
+
+// 侧边栏容器
+.sidebar {
+  margin-top: 0px;
+}
+
+// 侧边栏内部
+.sidebar-inner {
+  border-radius: 8px;
+  // 移除粘性定位
+}
+
+// 按钮圆角
+.btn {
+  border-radius: 8px;
+}
+
+// 代码块圆角
+.highlight {
+  border-radius: 8px;
+}
+
+// 搜索框圆角
+.search-input {
+  border-radius: 8px;
+}
+
+// 标签云圆角
+.tag-cloud-tags a {
+  border-radius: 8px;
+}
+
+// 头部菜单圆角和背景
+.header-inner {
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #222 30%, #fff 30%);  // 上方30%为黑色，下方70%为白色
+}
+
+// 主内容区域圆角
+.main-inner {
+  border-radius: 8px;
+  // 移除 flex 布局
+}
+
+
+
+// 菜单项圆角
+.menu {
+  border-radius: 0;
+  background: transparent;
+  margin-top: 0;  // 移除上边距，因为黑色区域变小了
+}
+
+// 修复菜单项的样式
+.menu-item {
+  border-radius: 0;
+}
+
+// 修复菜单容器
+.menu-item-active {
+  border-radius: 0;
+}
+
+// 菜单链接样式
+.menu-item a {
+  background: transparent;
+  color: #000;  // 改回黑色文字，因为现在菜单在白色背景上
+}
+
+.menu-item-active a {
+  background: transparent;
+}
+
+// 分页按钮圆角
+.pagination {
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+// 移除滚动修复
+html {
+  // 移除高度和滚动条设置
+}

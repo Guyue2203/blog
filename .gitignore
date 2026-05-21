@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Hexo generated files
+public/
+.deploy_git/
+.hexo/
+db.json
+
+# Logs
+.deploy_git/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime / cache
+.cache/
+.temp/
+.tmp/
+tmp/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# macOS / Finder metadata
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors and IDEs
+.idea/
+.vscode/

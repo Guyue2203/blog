@@ -1,0 +1,45 @@
+name: Deploy Hexo Blog to AliCloud
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Hexo
+        run: |
+          npx hexo clean
+          npx hexo generate
+
+      - name: Deploy to AliCloud server
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.ALICLOUD_SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.ALICLOUD_HOST }}
+          REMOTE_USER: ${{ secrets.ALICLOUD_USER }}
+          REMOTE_PORT: ${{ secrets.ALICLOUD_PORT }}
+          SOURCE: public/
+          TARGET: ${{ secrets.ALICLOUD_BLOG_PATH }}
+          ARGS: "-avz --delete"
