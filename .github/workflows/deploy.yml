@@ -34,6 +34,11 @@ jobs:
           npx hexo generate
           test -s public/index.html
           test -s public/css/main.css
+          test -s public/favicon.ico
+          test -s public/apple-touch-icon.png
+          test -s public/images/favicon-guyue.png
+          test -s public/images/apple-touch-icon-guyue.png
+          test -s public/images/apple-touch-icon-next.png
 
       - name: Deploy to AliCloud server
         uses: easingthemes/ssh-deploy@v5.1.0
