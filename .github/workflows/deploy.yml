@@ -28,11 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install NexT theme
-        run: |
-          rm -rf themes/next
-          git clone --depth 1 --branch v7.8.0 https://github.com/theme-next/hexo-theme-next.git themes/next
-
       - name: Build Hexo
         run: |
           npx hexo clean

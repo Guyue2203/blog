@@ -1,0 +1,14 @@
+/* 初始状态只设置背景色，不加载背景图 */
+body {
+    background-color: #f5f5f5;  /* 初始背景色 */
+}
+
+/* 使用 JavaScript 添加这个类来延迟加载背景图 */
+body.bg-loaded {
+    background-image: url('/images/blogbackground.jpg');  /* 替换为你的背景图路径 */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.3s ease-in;
+}
