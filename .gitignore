@@ -8,6 +8,7 @@ public/
 
 # Logs
 .deploy_git/
+db.json
 logs/
 *.log
 npm-debug.log*
