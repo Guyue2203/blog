@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24.15.0
           cache: npm
@@ -43,7 +43,7 @@ jobs:
           test -s public/images/apple-touch-icon-next.png
 
       - name: Deploy to AliCloud server
-        uses: easingthemes/ssh-deploy@v5.1.0
+        uses: easingthemes/ssh-deploy@v6.0.1
         with:
           SSH_PRIVATE_KEY: ${{ secrets.ALICLOUD_SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.ALICLOUD_HOST }}
